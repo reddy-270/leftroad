@@ -1,0 +1,31 @@
+.team {
+    margin: 2% 7%;
+}
+.team_cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+.team_heading {
+    font-size : 4.5em;
+    margin : 20px 10px 10px 40px;
+}
+
+@media (min-width : 770px) and (max-width : 1100px) {
+    .team {
+        margin : 1.5% 2%;
+    }
+    .team_heading {
+        font-size : 3.5em;
+        margin : 20px 10px 10px 30px;
+    }
+}
+
+@media (min-width : 300px) and (max-width : 769px) {
+    .team {
+        margin : 10px;
+    }
+    .team_heading {
+        font-size : 3em;
+        margin : 10px 5px 10px 10px;
+    }
+}

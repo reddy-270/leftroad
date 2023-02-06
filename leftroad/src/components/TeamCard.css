@@ -1,0 +1,60 @@
+.team_card {
+    margin: 20px 20px 30px 20px;
+    padding: 20px;
+    height: 400px;
+    width: 330px;
+}
+@media (min-width : 770px) and (max-width : 1100px) {
+    .team_card {
+        margin: 10px 10px 20px 10px;
+        padding: 10px;
+        height: 400px;
+        width: 330px;
+    }
+}
+
+.team_card_image {
+    height: 330px;
+    width: 330px;
+    border-radius: 20px;
+    border: 2px solid #1B2430;
+}
+.team_card_text {
+    display: flex;
+    justify-content: space-between;
+}
+.icon_linkedin {
+    height : 50px;
+    width : 50px;
+    justify-content : 'center';
+    display : 'flex';
+    padding-top: 40px;
+    margin-right: 10px;
+}
+.icon_link {
+    border: 2.5px solid white;
+    border-radius: 50%;
+    font-size: 2em;
+    color: white;
+    padding: 10px;
+}
+.icon_linkedin :hover {
+    background-color: white;
+    transition: 0.5s;
+    color: #1B2430;
+}
+
+@media (min-width : 300px) and (max-width : 769px) {
+    .team_card{
+        margin: 30px 5px;
+        padding : 2px;
+        height: 430px;
+        width: 360px;
+    }
+    .team_card_image {
+        height: 360px;
+        width: 360px;
+        border-radius: 20px;
+        border: 2px solid #1B2430;
+    }
+}

@@ -1,0 +1,63 @@
+.App {
+    background-color: #1B2430;
+    color: white;
+}
+.button_div {
+     padding-top : '30px';
+}
+.contac_button {
+    background-color: #A377CF;
+    color: white;
+    border: 2px solid #A377CF;
+    border-radius: 8px;
+    width: 210px;
+    height : 55px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: large;
+    cursor: pointer;
+}
+.contact_div {
+    border: 2px solid #A377CF;
+    border-radius: 20px;
+    display : flex;
+    flex-wrap : wrap;
+    margin : 2% 10% 5% 10%;
+    font-size: 1.7em;
+    justify-content: space-around;
+    padding: 1%;
+    font-weight: 500;
+}
+.button_div {
+    padding-top: 40px;
+}
+@media (max-width : 700px) and (min-width : 350px) {
+    .contact_div {
+        margin : 70px 20px;
+        font-size: 1.7em;
+        justify-content: space-around;
+        padding: 1%;
+        font-weight: 400;
+    }
+    .contac_button {
+        border-radius: 8px;
+        width: 300px;
+        height : 50px;
+        margin: 10px 10px 40px 10px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        font-size: large;
+    }
+    .contact_div {
+        text-align: center;
+    }
+    .button_div {
+        padding-top: 0px;
+    }
+
+    .contact_text p {
+        padding: 0px 20px;
+    }
+}

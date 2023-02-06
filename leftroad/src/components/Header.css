@@ -1,0 +1,36 @@
+.navbar_singleapp {
+    background-color: #1B2430;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar_list_1 {
+    padding-left: 75px;
+}
+.navbar_list_2 {
+    margin: 0px 0px;
+    padding: 15px 0px;
+    display: flex;
+    justify-items: center;
+}
+.navbar_listItem {
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.navbar_list_3 {
+    display: flex;
+    padding-right: 80px;
+    align-items: center;
+}
+.contact_button {
+    background: #4C93CE;
+    border: 2px solid #4C93CE;
+    border-radius: 6px;
+    color: white;
+    font-size: large;
+    height: 50px;
+    padding: 5px 23px;
+    cursor: pointer;
+}
