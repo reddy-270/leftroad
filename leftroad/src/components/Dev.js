@@ -20,7 +20,7 @@ const Dev = React.forwardRef((props, ref) => {
     "We help our clients to go live with the app. We deploy API to our client’s cloud server (AWS, Google Cloud, Azure) and publish. the app to the Apple App Store & Google Play Store.",
     "We provide 30 days free support once you go live. Long term support can be offered on an affordable monthly cost."
   ]
-  const backColor = ["#4C93CE", "#FF997E", "#96D7B0", "#F06E92", "#ECC879", "#A377CF"]
+  const backColor = ["#7DA7D4", "#F3B19C", "#B6DEC2", "#E590A8", "#EBD49C", "#AF93D4"]
   return (
     <div ref = {ref} className='development'>
       <div className='dev_text'>

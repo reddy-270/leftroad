@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
-
+import React, {useRef, useState} from 'react'
+import "./DevCard.css"
 export const DevCard = (props) => {
+
+    const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const [isHover, setIsHover] = useState(false);
     const handleMouseEnter = () => {
         setIsHover(true);
@@ -11,11 +13,13 @@ export const DevCard = (props) => {
     const color = props.color;
     const backColor = props.backColor;
     const styleDevCard = {
+        overflow : 'hidden',
+        zIndex : '0',
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '350px',
-        height: '380px',
+        width:  windowSize.current[0] <= 750 ? '360px' : '350px',
+        height: windowSize.current[0] <=750 ? '360px' : '380px',
         border: `2px solid ${color}`,
         borderRadius : '12px',
         color : 'white',
@@ -25,31 +29,46 @@ export const DevCard = (props) => {
         transition : '0.7s'
     };
     const styleDevIcon = {
+        position : 'relative',
         height : '50px',
         width : '50px',
-        zIndex : 100,
+        zIndex : '1000', 
+        transform : 'translate(0px, 80px)'
     };
     const styleDevRound = {
-        zIndex : '100',
-        transform : 'translate(125px, 50px)',
-        textAlign : 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
+        zIndex : '0',
+        transform : windowSize.current[0] <=750 ? 'translate(105px, 0px)' :'translate(125px, 0px)',
         width: '60px',
         height: '60px',
         border: `5px solid ${color}`,
         transition : '0.7s' ,
         backgroundColor: isHover ? `${backColor}` : 'black',
         borderRadius: '50px',
-        padding: '15px'
+        padding: '15px',
     };
+    const styleDevCircle = {
+        zIndex : '-100',
+        position : 'relative',
+        width: '450px',
+        height : '500px',
+        backgroundColor: `${color}`,
+        clipPath: 'ellipse(55% 50%)',
+        transform : windowSize.current[0] <=750 ? 'translate(-70px, -400px)' : 'translate(-50px , -370px)'
+    }
+    const styleRemaining = {
+        position : 'relative',
+        transform : windowSize.current[0] <= 750 ? "translate(0px, -515px)" : "translate(0px, -480px)",
+        zIndex : '1000'
+    }
   return (
     <div  style={styleDevCard} onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave} className='dev_card'>
-        <div className='dev_circle'></div>
-        <div style={styleDevRound}></div>
-        <img style={styleDevIcon} className='dev_icon' src={props.icon} alt = "" />
-        <p>{props.heading}</p>
-        <p>{props.para}</p>
+        <div style = {styleDevCircle} className='dev_circle'></div>
+        <div style = {styleRemaining}>
+            <img style={styleDevIcon} className='dev_icon' src={props.icon} alt = "" />
+            <div style={styleDevRound}></div>
+            <p style={{fontSize : '1.7em', fontWeight : '500', margin : '15px 10px'}}>{props.heading}</p>
+            <p style={{textAlign : 'left', padding : '5px 25px'}}>{props.para}</p>
+        </div>
     </div>
   )
 }

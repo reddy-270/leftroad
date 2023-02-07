@@ -11,12 +11,24 @@ import { useRef } from 'react';
 import { FooterMobile } from './components/FooterMobile';
 import { MobileHeader } from './components/MobileHeader';
 
+// import detectZoom from 'detect-zoom';
+
 function App() {
 
   const windowSize = useRef([window.innerWidth, window.innerHeight])
-
   console.log(windowSize.current[0], windowSize.current[1]);
 
+  window.addEventListener('resize', () => {
+    const browserZoomLevel = Math.round(window.devicePixelRatio * 100);
+    console.log(browserZoomLevel)
+  })
+
+  const scrollToSpecificSection = (elementRef) => {
+    window.scrollTo({
+      top : elementRef.current.offsetTop ,
+      behavior : 'smooth'
+    });
+  };
   const home = useRef(null);
   const about = useRef(null);
   const forms = useRef(null);
@@ -43,7 +55,7 @@ function App() {
           <p> Schedule a free consultation today. </p>
         </div>
         <div className='button_div'>
-          <button className='contac_button'>Contact Us</button>
+          <button onClick={ () => scrollToSpecificSection(navElementRefs[5])} className='contac_button'>Contact Us</button>
         </div>
       </div>
 

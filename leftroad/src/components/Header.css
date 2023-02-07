@@ -1,15 +1,10 @@
-.navbar_singleapp {
-    background-color: #1B2430;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-}
+
 .navbar_list_1 {
-    padding-left: 75px;
+    padding: 10px 0px 0px 75px;
 }
 .navbar_list_2 {
     margin: 0px 0px;
-    padding: 15px 0px;
+    padding: 15px 0px 10px 0px;
     display: flex;
     justify-items: center;
 }
@@ -23,6 +18,7 @@
     display: flex;
     padding-right: 80px;
     align-items: center;
+    margin-bottom: 8px;
 }
 .contact_button {
     background: #4C93CE;
