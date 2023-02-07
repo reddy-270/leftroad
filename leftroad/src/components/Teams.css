@@ -4,6 +4,7 @@
 .team_cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .team_heading {
     font-size : 4.5em;

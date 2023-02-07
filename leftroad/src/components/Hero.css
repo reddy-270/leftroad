@@ -1,0 +1,43 @@
+.home {
+    height: 650px;
+    width: auto;
+}
+.bg-image {
+    background-image: url("/Users/bharathreddy/Documents/leftroad/leftroad/src/assets/top_background.png");
+  
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .hero_content {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    /* padding: 20px; */
+    text-align: center;
+    /* justify-content: flex-start; */
+    justify-content: space-between;
+  }
+  .hero_text {
+    align-items: left;
+    padding-top: 20px;
+
+  }
+  .hero_text img {
+    height: 300px;
+    width: 500px;
+  }
+  .hero_gif img {
+    height : 400px;
+    width : 650px
+  }

@@ -2,6 +2,7 @@
     background: #3872A3;
     display: flex;
     color: white;
+    z-index: 1000;
 }
 .footer_image {
     margin: 50px;
