@@ -8,7 +8,7 @@
 }
 .team_heading {
     font-size : 4.5em;
-    margin : 20px 10px 10px 40px;
+    margin: 0px 0px;
 }
 
 @media (min-width : 770px) and (max-width : 1100px) {

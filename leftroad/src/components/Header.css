@@ -1,12 +1,9 @@
 
-.navbar_list_1 {
-    padding: 10px 0px 0px 75px;
-}
 .navbar_list_2 {
-    margin: 0px 0px;
-    padding: 15px 0px 10px 0px;
     display: flex;
     justify-items: center;
+    margin: 5px;
+    padding: 5px;
 }
 .navbar_listItem {
     list-style: none;
@@ -16,9 +13,9 @@
 }
 .navbar_list_3 {
     display: flex;
-    padding-right: 80px;
     align-items: center;
-    margin-bottom: 8px;
+    margin: 5px;
+    padding: 5px;
 }
 .contact_button {
     background: #4C93CE;

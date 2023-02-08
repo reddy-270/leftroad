@@ -7,7 +7,7 @@ import { Header } from "./components/Header.js"
 import Hero from './components/Hero';
 import Product from './components/Product';
 import Teams from './components/Teams';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { FooterMobile } from './components/FooterMobile';
 import { MobileHeader } from './components/MobileHeader';
 
@@ -15,13 +15,16 @@ import { MobileHeader } from './components/MobileHeader';
 
 function App() {
 
+  const [browserZoomLevel, setBrowserZoomLevel] = useState(0);
   const windowSize = useRef([window.innerWidth, window.innerHeight])
   console.log(windowSize.current[0], windowSize.current[1]);
 
   window.addEventListener('resize', () => {
     const browserZoomLevel = Math.round(window.devicePixelRatio * 100);
     console.log(browserZoomLevel)
+    setBrowserZoomLevel(browserZoomLevel);
   })
+
 
   const scrollToSpecificSection = (elementRef) => {
     window.scrollTo({

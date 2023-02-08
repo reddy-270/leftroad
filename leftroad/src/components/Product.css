@@ -21,6 +21,7 @@
 .product_div {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .product_div_cards {
     display: flex;

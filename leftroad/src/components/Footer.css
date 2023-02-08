@@ -3,6 +3,7 @@
     display: flex;
     color: white;
     z-index: 1000;
+    justify-content: center;
 }
 .footer_image {
     margin: 50px;

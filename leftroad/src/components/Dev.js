@@ -23,9 +23,11 @@ const Dev = React.forwardRef((props, ref) => {
   const backColor = ["#7DA7D4", "#F3B19C", "#B6DEC2", "#E590A8", "#EBD49C", "#AF93D4"]
   return (
     <div ref = {ref} className='development'>
-      <div className='dev_text'>
-        <p className='dev_heading'>Our <span style={{color : '#ECC879'}}>Development Process</span></p>
-        <p className='dev_para'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <div style={{justifyContent : 'center', display : 'flex'}}>
+        <div className='dev_text'>
+          <p className='dev_heading'>Our <span style={{color : '#ECC879'}}>Development Process</span></p>
+          <p className='dev_para'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
       </div>
       <div className='dev_cards'>
         {icons.map((item, index) => {
