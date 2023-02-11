@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import "./Header.css"
 import leftroad from "../assets/left_road_svg.svg"
 import { useEffect, useState } from 'react'
@@ -27,6 +27,7 @@ export const Header = (props) => {
         return () => window.removeEventListener("scroll", updatePosition);
     }, []);
   
+    const windowSize = useRef([window.innerWidth, window.innerHeight])
     const islandStyle = {
         margin : '5px 10%',
         position : 'sticky',
@@ -63,7 +64,19 @@ export const Header = (props) => {
       top : '0',
       justifyContent : 'center',
       zIndex : '1000',
-      paddingTop : '3px'
+      paddingTop : '6px'
+    }
+    const styleListItem = {
+      listStyle: 'none',
+      margin: '10px',
+      padding: '10px',
+      cursor: 'pointer',
+    }
+    const styleListItemZoom = {
+      listStyle: 'none',
+      margin: '10px 5px',
+      padding: '10px 5px',
+      cursor: 'pointer',
     }
   return (
     <div style={ scrollPosition  >10 ? onScrollStyleNavBar: styleNavBar} className='nav_bar'>
@@ -71,11 +84,11 @@ export const Header = (props) => {
           <img style = {scrollPosition > 10 ? {marginTop : '10px'} : {margin: '10px 10px 10px 2px'}} className='navbar_list_1' src = {leftroad} alt='' height="50" width = "75" />
           <ul className='navbar_list_2'>
             {refElements.map((item, index) => {
-              return <li onClick={ () => scrollToSpecificSection(item)} className = "navbar_listItem" key = {index}> {navListNames[index]} </li>
+              return <li style={windowSize.current[0] <1180 ?styleListItemZoom : styleListItem} onClick={ () => scrollToSpecificSection(item)} className = "navbar_listItem" key = {index}> {navListNames[index]} </li>
             })}
           </ul>
           <ul className='navbar_list_3'>
-              <li className='navbar_listItem'> Careers </li>
+              <li style={styleListItem} className='navbar_listItem'> Careers </li>
               <button onClick={ () => scrollToSpecificSection(refElements[5])} className='contact_button'>Contact us</button>
           </ul>
       </div>

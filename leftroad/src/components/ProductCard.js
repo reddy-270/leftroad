@@ -50,7 +50,7 @@ export const ProductCard = (props) => {
 
     const styleText = {
         transform : 'translate(0px, -110px)',
-        padding : ' 0px 15px'
+        padding : ' 0px 10px'
 
     }
     const styleRound = {

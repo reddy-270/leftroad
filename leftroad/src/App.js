@@ -15,7 +15,7 @@ import { MobileHeader } from './components/MobileHeader';
 
 function App() {
 
-  const [browserZoomLevel, setBrowserZoomLevel] = useState(0);
+  const [browserZoomLevel, setBrowserZoomLevel] = useState(200);
   const windowSize = useRef([window.innerWidth, window.innerHeight])
   console.log(windowSize.current[0], windowSize.current[1]);
 

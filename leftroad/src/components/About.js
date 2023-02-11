@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import "./About.css"
+import about_img from "../assets/about_img.png"
 const About = React.forwardRef((props, ref) => {
+  const windowSize = useRef([window.innerWidth, window.innerHeight])
+
   return (
     <div ref={ref} className='about'>
         <div className='about_image'>
-          <h1>Image</h1>
+          <img height={windowSize.current[0] <450 ? 350 : 450} width = {windowSize.current[0] <450 ? 350 : 500} src={about_img} alt = "" />
         </div>
         <div className='about_text'>
           <p style={{fontSize : '3em', margin : '0px 0px 20px 0px', fontWeight : '500'}}>Who Are <span style = {{color : '#F370CE'}}>We?</span></p>

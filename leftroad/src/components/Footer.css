@@ -21,6 +21,10 @@
     }
 }
 
+.footer ul {
+    padding: 0px 10px;
+}
+
 .footer ul li{
     list-style: none;
 }
@@ -30,7 +34,7 @@
     padding: 10px;
 }
 .footer_item {
-    margin: 30px 20px;
+    margin: 30px 15px;
     color: white;
 }
 

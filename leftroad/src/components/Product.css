@@ -27,15 +27,15 @@
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
-    margin-left: 100px;
+    margin-left: 5%;
     width: 700px;
     justify-content: center;
     align-items: center;
 }
 
-@media (max-width : 1150px) and (min-width : 750px) {
+@media (max-width : 1152px) and (min-width : 750px) {
     .product_div_cards {
-        margin-left: 10px;
+        margin-left: 5px;
         padding: 5px;
     }
     .product {

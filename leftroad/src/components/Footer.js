@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Footer.css"
-import leftroad_footer from "../assets/left_road_footer.png"
+import leftroad_footer from "../assets/left_road_footer.svg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
