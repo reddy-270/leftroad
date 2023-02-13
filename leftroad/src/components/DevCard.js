@@ -26,7 +26,7 @@ export const DevCard = (props) => {
         margin : '15px',
         padding : '5px',
         backgroundColor : isHover ? `${color}` : '#1B2430',
-        transition : '0.7s'
+        transition : '0.7s',
     };
     const styleDevIcon = {
         position : 'relative',
@@ -37,7 +37,7 @@ export const DevCard = (props) => {
     };
     const styleDevRound = {
         zIndex : '0',
-        transform : windowSize.current[0] <=750 ? 'translate(105px, 0px)' :'translate(125px, 0px)',
+        transform : windowSize.current[0] <=750 ? 'translate(120px, 0px)' :'translate(125px, 0px)',
         width: '60px',
         height: '60px',
         border: `5px solid ${color}`,
@@ -53,7 +53,7 @@ export const DevCard = (props) => {
         height : '500px',
         backgroundColor: `${color}`,
         clipPath: 'ellipse(55% 50%)',
-        transform : windowSize.current[0] <=750 ? 'translate(-70px, -400px)' : 'translate(-50px , -370px)'
+        transform : windowSize.current[0] <=750 ? 'translate(-60px, -400px)' : 'translate(-50px , -370px)'
     }
     const styleRemaining = {
         position : 'relative',

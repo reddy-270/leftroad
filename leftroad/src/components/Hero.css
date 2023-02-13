@@ -34,3 +34,30 @@
     height : 370px;
     width : 620px
   }
+
+
+  @media (max-width : 890px) {
+    .home {
+      height: 450px;
+      width: auto;
+  }
+    .bg-image {
+      background-image: url("../assets/top_background.png");
+    
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .hero_content {
+      display: flex;
+      flex-wrap: wrap;
+      color: white;
+      transform: translate(0, -120%);
+      z-index: 2;
+      justify-content: center;
+      /* align-items: center; */
+    }
+  }
