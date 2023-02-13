@@ -14,24 +14,39 @@ const Hero = React.forwardRef((props, ref) => {
     setBrowserZoomLevel(browserZoomLevel);
   })
 
-  // const windowSize = useRef([window.innerWidth, window.innerHeight])
-  // console.log(windowSize.current[0], windowSize.current[1]);
-
-  // const imgWidth = 0.39* (windowSize.current[0]);
-
+  const windowSize = useRef([window.innerWidth, window.innerHeight])
   return (
     <div ref = {ref} className='home'> 
       <div className='bg-image' >
 
       </div>
+      {windowSize.current[0] <= 890 ? 
       <div className='hero_content'>
-        <div className='hero_text'>
-          <img style={browserZoomLevel >= 200 ? {width : '530px', height : '330px'} : {width : '530px', height : '330px'}} src={hero_text} alt = ""></img>
+        <div style={{}} className='hero_text'>
+          <img style={{width : '250px', height : '150px'}} src={hero_text} alt = ""></img>
         </div>
         <div className='hero_gif'>
-          <img style={browserZoomLevel >= 200 ? {width : '550px', height : '340px'} : {width : '620px', height : '370px'}} src={gif} alt = ""></img>
+          <img style={{width : '375px', height : '210px'}} src={gif} alt = ""></img>
         </div>
-      </div>
+      </div> :
+       windowSize.current[0] <1150 && windowSize.current[0] > 890 ?  
+       <div className='hero_content'>
+       <div className='hero_text'>
+         <img style={{width : '450px', height : '280px'}} src={hero_text} alt = ""></img>
+       </div>
+       <div className='hero_gif'>
+         <img style={{width : '420px', height : '280px'}} src={gif} alt = ""></img>
+       </div>
+     </div>
+       :
+      <div className='hero_content'>
+        <div className='hero_text'>
+          <img style={{width : '530px', height : '330px'}} src={hero_text} alt = ""></img>
+        </div>
+        <div className='hero_gif'>
+          <img style={{width : '620px', height : '370px'}} src={gif} alt = ""></img>
+        </div>
+      </div> }
     </div>
   )
 })

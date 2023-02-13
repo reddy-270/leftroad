@@ -41,8 +41,7 @@
     }
     .about_image {
         height: 400px;
-        width :80%;
-        margin: 10px 20px;
+        margin: 30px;
     }
     .about_text {
         max-height: 400px;
