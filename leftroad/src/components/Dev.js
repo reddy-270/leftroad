@@ -26,7 +26,7 @@ const Dev = React.forwardRef((props, ref) => {
       <div style={{justifyContent : 'center', display : 'flex'}}>
         <div className='dev_text'>
           <p className='dev_heading'>Our <span style={{color : '#ECC879'}}>Development Process</span></p>
-          <p className='dev_para'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p className='dev_para'>Discover our seamless software development process, delivering custom solutions on time and within budget. Let's build your next success story.</p>
         </div>
       </div>
       <div className='dev_cards'>

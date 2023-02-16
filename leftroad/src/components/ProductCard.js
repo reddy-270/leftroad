@@ -85,7 +85,7 @@ export const ProductCard = (props) => {
         <img style={styleCard} src={props.icon} alt = '' />
         <div style={styleText} className='product_card_text'>
             <h2> {props.text} </h2>
-            <p style={{textAlign : 'left', fontSize : '0.92em', margin : '5px 0px'}}> {props.para} </p>
+            <p style={{textAlign : 'left', fontSize : '1.12em', margin : '5px 0px'}}> {props.para} </p>
         </div>
     </div>
   )

@@ -10,10 +10,10 @@ const Product = React.forwardRef((props, ref) => {
   const icons = [icon1, icon2, icon3, icon4];
   const cardHeading = ["Mobile Apps", "Websites", "Desktop Apps", "Software Solutions"];
   const cardPara = [
-    "The ultimate solution for businesses looking to take their digital presence to the next level. With our cutting-edge technology and team of expert developers, we can create custom mobile apps that are tailored to your specific needs and designed to drive real results. Don't settle for a generic, off-the-shelf app that doesn't fully meet the needs of your business. Choose our mobile application development product and experience the difference of a truly custom solution.",
-    "Are you ready to take your online presence to the next level? Look no further than our website development product. Our team of expert designers and developers will work with you to create a custom website that is not only visually stunning but also fully optimized to drive conversions and engage your audience. Don't settle for a cookie-cutter website that doesn't fully represent your brand. Choose our website development product and see the difference a custom solution can make. Contact us today to schedule a free consultation and learn more about how we can help you achieve your online goals.",
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled."
+    "Experience seamless and intuitive mobile application development with our software company. From ideation to launch, our experts deliver custom solutions to empower your business on the go. Let's build your next success story together.",
+    "Transform your digital presence with our innovative web application development solutions. From elegant designs to powerful functionality, our software company delivers bespoke products that elevate your online experience. Let's create a dynamic and scalable platform for your business",
+    "Revolutionize the way you work with our cutting-edge desktop application development. From simple utilities to complex systems, our software company creates tailor-made solutions that improve your productivity and efficiency. Let's bring your vision to life and empower your business for success.",
+    "At our software company, we craft custom solutions to address your unique business challenges. Our team of experts develops innovative software that maximizes your performance and enhances your customer experience. Let's collaborate and build a better tomorrow for your enterprise"
   ];
 
   const colorsList = ['#F09D6E', '#7CC9CE', '#F370CE', '#8DD980']
@@ -24,7 +24,11 @@ const Product = React.forwardRef((props, ref) => {
       <div className='product_div'>
         <div className='product_div_text'>
           <p className='product_heading'>Our <span style={{color : '#8DD980'}}>Products</span></p>
-          <p className='product_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.</p>
+          <p className='product_text'>We specialize in delivering bespoke mobile, web, and desktop applications that transform the way you do business. Our team of skilled professionals works with you to understand your specific requirements and develop tailored solutions that take your enterprise to the next level.</p>
+          <p className='product_text'>
+Whether you need a sleek and functional mobile application, a dynamic web platform, or a comprehensive desktop software, we have the expertise to deliver. We pride ourselves on our ability to turn your ideas into reality, with cutting-edge technology and unparalleled customer service.</p>
+<p className='product_text'>
+Join us on a journey of success, as we create software solutions that drive your business forward. Let's collaborate and innovate together.</p>
         </div>
         <div className='product_div_cards'>
           {icons.map((item, index) => {
