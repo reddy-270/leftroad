@@ -24,7 +24,6 @@ const Product = React.forwardRef((props, ref) => {
       <div className='product_div'>
         <div className='product_div_text'>
           <p className='product_heading'>Our <span style={{color : '#8DD980'}}>Products</span></p>
-          <p className='product_text'>We specialize in delivering bespoke mobile, web, and desktop applications that transform the way you do business. Our team of skilled professionals works with you to understand your specific requirements and develop tailored solutions that take your enterprise to the next level.</p>
           <p className='product_text'>
 Whether you need a sleek and functional mobile application, a dynamic web platform, or a comprehensive desktop software, we have the expertise to deliver. We pride ourselves on our ability to turn your ideas into reality, with cutting-edge technology and unparalleled customer service.</p>
 <p className='product_text'>
