@@ -16,8 +16,8 @@ const Teams = React.forwardRef((props, ref) => {
   })
 
   const teamImages = [nihal, yash, anish];
-  const teamMemNames = ['Nihal Puram', 'Yash Renwa', 'Anish'];
-  const teamMemJob = ['Manager', 'Manager', 'Manager']
+  const teamMemNames = ['Nihal Puram', 'Yash Renwa', 'Anish Poludasu'];
+  const teamMemJob = ['CEO & COO', 'CTO & Product director', 'CMO & Sales']
   const teamMemLinkedinUrl = ['https://www.linkedin.com/in/nihal-puram/', 'https://www.linkedin.com/in/yash-renwa/', 'https://www.linkedin.com/in/anish-poludasu-687522218/']
   return (
     <div ref={ref} className='team'>
