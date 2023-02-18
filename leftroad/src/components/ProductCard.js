@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { useInView } from 'react-intersection-observer';
 export const ProductCard = (props) => {
 
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -13,8 +14,13 @@ export const ProductCard = (props) => {
         setIsHover(false);
     };
 
-    const mediaStyleCard = {
-        width: '350px',
+    const { ref, inView } = useInView({
+        triggerOnce: false,
+        threshold : 0.9,
+      });
+
+    const mobileStyleCard = {
+        width: '335px',
         height: '420px',
         margin: '30px 0px',
         border: `4px solid ${color}`,
@@ -22,7 +28,7 @@ export const ProductCard = (props) => {
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
-        backgroundColor: isHover ? `${color}` : `${backColor}`,
+        backgroundColor: inView ? `${color}` : `${backColor}`,
         transition : '0.7s' ,
         padding : '2px',
     }
@@ -68,19 +74,19 @@ export const ProductCard = (props) => {
     }
     const mobileStyleRound = {
         textAlign : 'center',
-        transform: 'translate(125px, -50px)',
+        transform: 'translate(115px, -50px)',
         justifyContent: 'center',
         alignItems: 'center',
         width: '60px',
         height: '60px',
-        border: isHover ? '5px solid #1B2430' :`5px solid ${color}`,
+        border: inView ? '5px solid #1B2430' :`5px solid ${color}`,
         transition : '0.7s' ,
         backgroundColor: `${color}`,
         borderRadius: '50px',
         padding: '15px'
     }
   return (
-    <div style={ windowSize.current[0] <750 ? mediaStyleCard: styleCardDiv } onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave} className='product_card'>
+    <div ref = {ref} style={ windowSize.current[0] <750 ? mobileStyleCard: styleCardDiv } onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave} className='product_card'>
         <div style={ windowSize.current[0] <750 ?mobileStyleRound : styleRound} className='round'></div>
         <img style={styleCard} src={props.icon} alt = '' />
         <div style={styleText} className='product_card_text'>

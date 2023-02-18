@@ -64,6 +64,9 @@
 }
 
 @media (max-width : 600px) and (min-width : 300px) {
+    .forms { 
+        margin: 2.5%;
+    }
     .big_text {
         width: 280px;
         height: 150px;

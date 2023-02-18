@@ -26,7 +26,7 @@ const Hero = React.forwardRef((props, ref) => {
           <img style={{width : '250px', height : '150px'}} src={hero_text} alt = ""></img>
         </div>
         <div className='hero_gif'>
-          <img style={{width : '375px', height : '210px'}} src={gif} alt = ""></img>
+          <img style={{width : '360px', height : '210px'}} src={gif} alt = ""></img>
         </div>
       </div> :
        windowSize.current[0] <1150 && windowSize.current[0] > 890 ?  
@@ -49,6 +49,6 @@ const Hero = React.forwardRef((props, ref) => {
       </div> }
     </div>
   )
-})
+}) 
 
 export default Hero

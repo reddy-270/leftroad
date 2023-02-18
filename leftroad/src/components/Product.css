@@ -5,16 +5,15 @@
 .product_div_text {
     width: 400px;
     height: 600px;
-
 }
 .product_heading {
     font-size: 4.5em;
-    padding-left: 30px;
+    /* padding-left: 30px; */
     margin: 10px;
 }
 .product_text {
     width: 380px;
-    padding-left: 30px;
+    /* padding-left: 30px; */
     margin: 10px;
     font-size: larger;
 }
@@ -59,19 +58,17 @@
         margin: 8% 2% 2% 2%;
         padding-top: 2%;
     }
-    .product_text, .product_heading {
-        padding-left: 2px;
-        margin: 2px;
-    } 
     .product_text {
         font-size: large;
+        width: 330px;
     }
     .product_div_text {
         height: 350px;
-        margin-left: 5px;
+        width: 360px;
+        margin-left : 0px
     }
     .product_heading {
         font-size: 3.3em;
-        margin-bottom: 10px;
+        margin-bottom: 10px 0px;
     }
 }

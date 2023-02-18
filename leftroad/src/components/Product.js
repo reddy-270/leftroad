@@ -22,7 +22,7 @@ const Product = React.forwardRef((props, ref) => {
   return (
     <div ref = {ref} className='product'>
       <div className='product_div'>
-        <div className='product_div_text'>
+        <div className='product_div_text' >
           <p className='product_heading'>Our <span style={{color : '#8DD980'}}>Products</span></p>
           <p className='product_text'>
 Whether you need a sleek and functional mobile application, a dynamic web platform, or a comprehensive desktop software, we have the expertise to deliver. We pride ourselves on our ability to turn your ideas into reality, with cutting-edge technology and unparalleled customer service.</p>

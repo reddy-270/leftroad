@@ -2,17 +2,20 @@ import React, {useRef} from 'react'
 import "./Header.css"
 import leftroad from "../assets/left_road_svg.svg"
 import { useEffect, useState } from 'react'
+import {useScrollBy} from "react-use-window-scroll"
 
-export const Header = (props) => {
+const Header = React.forwardRef((props, ref) => {
 
   const refElements = props.navEleRefs;
   const navListNames = ['Home', 'About us', ' Our Products', 'Development', 'Our Team', 'Referrals']
   
-  const scrollToSpecificSection = (elementRef) => {
-    window.scrollTo({
-      top : elementRef.current.offsetTop ,
-      behavior : 'smooth'
-    });
+  const scrollBy = useScrollBy();
+  const scrollToSpecificSection = (elementRef, eRef) => {
+    const x = eRef.current.offsetTop
+    const y = elementRef.current.offsetTop
+    let topp = x;
+    x > y ? topp = -(x-y) - 100 : topp = (y-x)-100
+    scrollBy({top : topp, behavior : 'smooth'})
   };
 
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -79,19 +82,21 @@ export const Header = (props) => {
       cursor: 'pointer',
     }
   return (
-    <div style={ scrollPosition  >10 ? onScrollStyleNavBar: styleNavBar} className='nav_bar'>
+    <div ref = {ref} style={ scrollPosition  >10 ? onScrollStyleNavBar: styleNavBar} className='nav_bar'>
       <div style={scrollPosition >10 ? islandStyle : normalNavStyle } className='navbar_singleapp'>
-          <img style = {scrollPosition > 10 ? {marginTop : '10px'} : {margin: '10px 10px 10px 2px'}} className='navbar_list_1' src = {leftroad} alt='' height="50" width = "75" />
+          <img onClick={() => scrollToSpecificSection(props.navEleRefs[0], props.hRef)} style = {scrollPosition > 10 ? {marginTop : '10px'} : {margin: '10px 10px 10px 2px'}} className='navbar_list_1' src = {leftroad} alt='' height="50" width = "75" />
           <ul className='navbar_list_2'>
             {refElements.map((item, index) => {
-              return <li style={windowSize.current[0] <1180 ?styleListItemZoom : styleListItem} onClick={ () => scrollToSpecificSection(item)} className = "navbar_listItem" key = {index}> {navListNames[index]} </li>
+                return <li style={windowSize.current[0] <1180 ?styleListItemZoom : styleListItem} onClick={ () => scrollToSpecificSection(item, props.hRef)} className = "navbar_listItem" key = {index}> {navListNames[index]} </li>
             })}
           </ul>
           <ul className='navbar_list_3'>
               <li style={styleListItem} className='navbar_listItem'> Careers </li>
-              <button onClick={ () => scrollToSpecificSection(refElements[5])} className='contact_button'>Contact us</button>
+              <button onClick={ () => scrollToSpecificSection(refElements[5], props.hRef)} className='contact_button'>Contact us</button>
           </ul>
       </div>
     </div>
   )
-}
+})
+
+export default Header

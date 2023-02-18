@@ -1,4 +1,6 @@
-
+.navbar_list_1 {
+    cursor: pointer;
+}
 .navbar_list_2 {
     display: flex;
     justify-items: center;

@@ -1,11 +1,13 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, forwardRef } from 'react'
 import left_raod from "../assets/left_road_svg.svg"
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useScrollBy } from 'react-use-window-scroll';
 
-export const MobileHeader = (props) => {
+const MobileHeader = forwardRef((props, ref) => {
 
+  const navRefs = props.navEleRefs
   const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect (() => {
@@ -17,13 +19,15 @@ export const MobileHeader = (props) => {
 
         return () => window.removeEventListener("scroll", updatePosition);
     }, []);
+
+    const scrollBy = useScrollBy();
   const [clickState, setClickState] = useState(false);
-  const scrollToSpecificSection = (elementRef) => {
-    console.log(elementRef.current.offsetTop)
-    window.scrollTo({
-      top : `${elementRef.current.offsetTop}`,
-      behavior : 'smooth'
-    });
+  const scrollToSpecificSection = (elementRef, eRef) => {
+    const x = eRef.current.offsetTop
+    const y = elementRef.current.offsetTop
+    let topp = x;
+    x > y ? topp = -(x-y) - 100 : topp = (y-x)-100
+    scrollBy({top : topp, behavior : 'smooth'})
   };
 
   const navListNames = ['Home', 'About us', 'Products', 'Development', 'Our Team', 'Referrals'];
@@ -107,9 +111,9 @@ export const MobileHeader = (props) => {
   }
 
   return (
-    <div style={ scrollPosition >5 ? onScrollStyleMobileHeader : styleMobileHeader} className='mobile_header'> 
+    <div ref = {ref} style={ scrollPosition >5 ? onScrollStyleMobileHeader : styleMobileHeader} className='mobile_header'> 
       <div style={ scrollPosition >5 ? onScrollStyleMobileHeaderInside : styleMobileHeaderInside} className='mobile_header_inside'>
-        <div style={{paddingLeft : '4%'}}> 
+        <div onClick={() => scrollToSpecificSection(navRefs[0], props.hRef)} style={{paddingLeft : '4%'}}> 
           <img src={left_raod} alt = '' ></img>
         </div>
         <div style={styleHam}>
@@ -124,15 +128,17 @@ export const MobileHeader = (props) => {
           {props.navEleRefs.map((item, index) => {
               return <div>
                 <hr style={styleRuler}></hr>
-                <li style={{padding : '8px 15px', cursor : 'pointer'}} onClick={ () => {scrollToSpecificSection(item); setClickState(false)}} className = "navbar_listItem" key = {index}> {navListNames[index]} </li>
+                <li style={{padding : '8px 15px', cursor : 'pointer'}} onClick={ () => {scrollToSpecificSection(item, props.hRef); setClickState(false)}} className = "navbar_listItem" key = {index}> {navListNames[index]} </li>
               </div>
             })}
         </ul>
         <ul className='navbar_list_3'>
               <li style={styleListItem} className='navbar_listItem'> Careers </li>
-              <button onClick={ () => {scrollToSpecificSection(props.navEleRefs[5]); setClickState(false)}} className='contact_button'>Contact us</button>
+              <button onClick={ () => {scrollToSpecificSection(props.navEleRefs[5], props.hRef); setClickState(false)}} className='contact_button'>Contact us</button>
         </ul>
       </div>
     </div>
   )
-}
+})
+
+export default MobileHeader

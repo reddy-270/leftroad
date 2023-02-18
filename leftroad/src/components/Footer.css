@@ -7,6 +7,7 @@
 }
 .footer_image {
     margin: 50px;
+    cursor: pointer;
 }
 
 @media (min-width : 870px) and (max-width : 1050px) {

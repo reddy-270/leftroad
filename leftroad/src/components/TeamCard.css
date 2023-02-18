@@ -47,13 +47,13 @@
 @media (min-width : 300px) and (max-width : 769px) {
     .team_card{
         margin: 30px 5px;
-        padding : 2px;
-        height: 430px;
-        width: 360px;
+        padding : 5px;
+        height: 410px;
+        width: 340px;
     }
     .team_card_image {
-        height: 360px;
-        width: 360px;
+        height: 340px;
+        width: 340px;
         border-radius: 20px;
         border: 2px solid #1B2430;
     }

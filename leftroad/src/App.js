@@ -3,13 +3,14 @@ import About from './components/About';
 import Dev from './components/Dev';
 import Footer from './components/Footer';
 import Forms from './components/Forms';
-import { Header } from "./components/Header.js"
+import Header from "./components/Header"
 import Hero from './components/Hero';
 import Product from './components/Product';
 import Teams from './components/Teams';
 import { useRef, useState } from 'react';
-import { FooterMobile } from './components/FooterMobile';
-import { MobileHeader } from './components/MobileHeader';
+import FooterMobile from './components/FooterMobile';
+import MobileHeader  from './components/MobileHeader';
+import { useScrollBy } from 'react-use-window-scroll';
 
 // import detectZoom from 'detect-zoom';
 
@@ -25,13 +26,17 @@ function App() {
     setBrowserZoomLevel(browserZoomLevel);
   })
 
-
+  const scrollBy = useScrollBy();
   const scrollToSpecificSection = (elementRef) => {
-    window.scrollTo({
-      top : elementRef.current.offsetTop ,
-      behavior : 'smooth'
-    });
+    const x = windowSize.current[0] < 1150 ?  mobHeader.current.offsetTop : header.current.offsetTop;
+    const y = elementRef.current.offsetTop
+    let topp = x
+    x > y ? topp = -(x-y) - 100 : topp = (y-x)-100
+    scrollBy({top : topp, behavior : 'smooth'})
+  
   };
+  const header = useRef(null);
+  const mobHeader = useRef(null);
   const home = useRef(null);
   const about = useRef(null);
   const forms = useRef(null);
@@ -39,13 +44,16 @@ function App() {
   const development = useRef(null);
   const team = useRef(null);
 
+  let fRef = header
+  windowSize.current[0] <= 1150 ?fRef = mobHeader : fRef = header;
+
   const navElementRefs = [home, about, products, development, team, forms]
 
   return (
 
     <div className="App">
       
-      {windowSize.current[0] > 1150 ? <Header navEleRefs = {navElementRefs} /> : <MobileHeader navEleRefs = {navElementRefs} />}
+      {windowSize.current[0] > 1150 ? <Header ref = {header} hRef = {header} navEleRefs = {navElementRefs} /> : <MobileHeader ref = {mobHeader} hRef = {mobHeader} navEleRefs = {navElementRefs} />}
       <Hero ref = {home} />
       <About ref = {about} />
       <Forms ref = {forms}/>
@@ -62,7 +70,7 @@ function App() {
         </div>
       </div>
 
-      {windowSize.current[0] <850 ? <FooterMobile navEleRefs = {navElementRefs} /> : <Footer navEleRefs = {navElementRefs} />}
+      {windowSize.current[0] <850 ? <FooterMobile fRefer = {fRef} navEleRefs = {navElementRefs} /> : <Footer fRefer = {fRef} navEleRefs = {navElementRefs} />}
     </div>
   );
 }
